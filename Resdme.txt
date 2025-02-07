@@ -7,8 +7,36 @@
 使用 PowerShell 計算哈希值的命令
 Get-FileHash yourfile.dll -Algorithm SHA256
 
+PS C:\Users\jashv\OneDrive\桌面\GITHUB\Binary-file-comparison> Get-FileHash .\TSCLib_x86-64\TSCLib.dll -Algorithm SHA256
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          D6D5A35598065CE7C14CEBC2C89CC93E5437A47256A0A36208196A20AEFAF06A       C:\Users\jashv\OneDrive\桌面\...
+
+
+
+PS C:\Users\jashv\OneDrive\桌面\GITHUB\Binary-file-comparison> Get-FileHash .\TSC_DLL_64bit\TSCLib.dll -Algorithm SHA256
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          D6D5A35598065CE7C14CEBC2C89CC93E5437A47256A0A36208196A20AEFAF06A       C:\Users\jashv\OneDrive\桌面\...
+
+
+
 01.在 Windows 上可以使用 fc 命令進行逐字節比較
 fc /b file1.dll file2.dll
+
+fc /b .\TSCLib_x86-64\TSCLib.dll .\TSC_DLL_64bit\TSCLib.dll > log.txt
+pause
+
+fc /b .\TSCLib_x86\TSCLib.dll .\TSC_DLL_32bit\TSCLib.dll >> log.txt
+pause
+
+fc /b .\office_x32\TSCLib.dll .\TSC_DLL_32bit\TSCLib.dll >> log.txt
+pause
+
+fc /b .\TSCLib_x86\TSCLib.dll .\office_x32\TSCLib.dll >> log.txt
+pause
 
 
 PS.
