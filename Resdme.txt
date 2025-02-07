@@ -1,0 +1,17 @@
+如何知道 DLL/EXE(二進位檔案) 是否為同一檔案
+
+資料來源: copilot
+
+
+00.計算兩個文件的哈希值（如MD5、SHA-1或SHA-256）。如果哈希值相同，則文件是相同的。這是最常用的方法。
+使用 PowerShell 計算哈希值的命令
+Get-FileHash yourfile.dll -Algorithm SHA256
+
+01.在 Windows 上可以使用 fc 命令進行逐字節比較
+fc /b file1.dll file2.dll
+
+
+PS.
+TSC DLL 下載 (x32/x64)
+http://www.chongshang.com.cn/news/view.asp?id=542
+https://www.dllme.com/
